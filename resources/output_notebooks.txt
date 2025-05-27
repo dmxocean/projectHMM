@@ -55,6 +55,204 @@ USCO		0.2101		0.2101		+0.0000
 ----------------------------------------------------------------------
 Macro Avg	0.6130		0.6137		-0.0007
 
+
+
+Predictions saved to /home/tomiock/uni2024/natural_language_processing/projectNLP/hidden_markov_models/data_hmm/results/evaluation/first_order_predictions.pkl for later comparison
+
+-- SUCCESSFUL PREDICTIONS --
+Examples where the BIO+POS model correctly identified negation/uncertainty markers with boundaries:
+
+Success Example 1:
+Example ID: 41-13
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+hidrorrea/NOUN       O            O            T       
+franca/ADJ           O            O            T       
+de/ADP               O            O            T       
+aguas/NOUN           O            O            T       
+claras/ADJ           O            O            T       
+no/ADV               B-NEG        B-NEG        T       
+metrorragia/NOUN     B-NSCO       B-NSCO       T       
+tacto/PROPN          O            I-NSCO       F       
+vaginal/PROPN        O            I-NSCO       F       
+cervix/PROPN         O            O            T       
+
+
+Success Example 2:
+Example ID: 47-48
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+ritmo/NOUN           O            O            T       
+sinusal/ADJ          O            O            T       
+sin/ADP              B-NEG        B-NEG        T       
+alteraciones/NOUN    B-NSCO       B-NSCO       T       
+de/ADP               I-NSCO       I-NSCO       T       
+la/DET               I-NSCO       I-NSCO       T       
+repolarizacion/PROPN I-NSCO       I-NSCO       T       
+y/CCONJ              O            O            T       
+radiografia/NOUN     O            O            T       
+de/ADP               O            O            T       
+
+
+Success Example 3:
+Example ID: 4-45
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+ar/VERB              O            O            T       
+eupneica/VERB        O            O            T       
+a/ADP                O            O            T       
+aire/NOUN            O            O            T       
+ambiente/NOUN        O            O            T       
+murmullo/NOUN        O            O            T       
+vesicular/ADJ        O            O            T       
+conservado/ADJ       O            O            T       
+sin/ADP              B-NEG        B-NEG        T       
+ruidos/NOUN          B-NSCO       B-NSCO       T       
+
+
+Success Example 4:
+Example ID: 45-12
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+episodio/NOUN        O            O            T       
+febril/ADJ           O            O            T       
+de/ADP               O            O            T       
+38ºc/NUM             O            O            T       
+bien/ADV             O            O            T       
+tolerado/ADJ         O            O            T       
+sin/ADP              B-NEG        B-NEG        T       
+tiritonas/NOUN       B-NSCO       O            F       
+se/PRON              O            O            T       
+realiza/VERB         O            O            T       
+
+
+Success Example 5:
+Example ID: 1-27
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+se/PRON              B-NSCO       B-NSCO       T       
+palpan/VERB          I-NSCO       I-NSCO       T       
+adenopatias/NOUN     I-NSCO       I-NSCO       T       
+laterocervicales/ADJ I-NSCO       I-NSCO       T       
+ni/CCONJ             I-NSCO       I-NSCO       T       
+supraclaviculares/.. I-NSCO       I-NSCO       T       
+faringe/PROPN        O            O            T       
+hiperemica/ADJ       O            O            T       
+amigdalas/NOUN       O            O            T       
+hipetroficas/ADJ     O            O            T       
+
+
+
+-- CHALLENGING CASES --
+Examples where the BIO+POS model struggled with negation/uncertainty markers:
+
+Error Example 1:
+Example ID: 22-16
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+tonos/NOUN           O            O            T       
+cardiacos/NOUN       O            O            T       
+ritmicos/ADJ         O            O            T       
+sin/ADP              B-NEG        B-NEG        T       
+solplos/VERB         B-NSCO       B-NSCO       T       
+pulsos/NOUN          O            I-NSCO       F       
+perifericos/ADJ      O            I-NSCO       F       
+simetricos/ADJ       O            I-NSCO       F       
+sin/ADP              B-NEG        B-NEG        T       
+edemas/NOUN          B-NSCO       B-NSCO       T       
+
+
+Error Example 2:
+Example ID: 22-13
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+traumatismo/NOUN     O            O            T       
+por/ADP              O            O            T       
+caida/NOUN           O            O            T       
+desde/ADP            O            O            T       
+su/DET               O            O            T       
+propia/DET           O            O            T       
+altura/NOUN          O            O            T       
+con/ADP              O            O            T       
+incapacidad/NOUN     B-NEG        B-NEG        T       
+para/ADP             B-NSCO       O            F       
+
+
+Error Example 3:
+Example ID: 61-14
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+de/ADP               O            O            T       
+tamaño/NOUN          O            O            T       
+y/CCONJ              O            O            T       
+morfologia/NOUN      O            O            T       
+dentro/ADV           O            O            T       
+de/ADP               O            O            T       
+la/DET               O            O            T       
+normalidad/NOUN      O            O            T       
+pequeñas/ADJ         O            O            T       
+lesiones/NOUN        O            B-NSCO       F       
+
+
+Error Example 4:
+Example ID: 22-7
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+descompensaciones/.. I-NSCO       I-NSCO       T       
+desde/ADP            I-NSCO       O            F       
+entonces/ADV         I-NSCO       O            F       
+en/ADP               O            O            T       
+tratamiento/NOUN     O            O            T       
+con/ADP              O            O            T       
+furosemida/NOUN      O            O            T       
+y/CCONJ              O            O            T       
+espironolactona/VERB O            O            T       
+-coxartrosis/PROPN   O            O            T       
+
+
+Error Example 5:
+Example ID: 19-30
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+disminuido/ADJ       O            O            T       
+abdomen/VERB         O            O            T       
+blando/ADJ           O            O            T       
+depresible/ADJ       O            O            T       
+sin/ADP              B-NEG        B-NEG        T       
+visceromegalia/PROPN B-NSCO       B-NSCO       T       
+globulo/ADJ          O            I-NSCO       F       
+a/ADP                O            O            T       
+expensas/NOUN        O            O            T       
+de/ADP               O            O            T       
+
+
+-- COMMON ERROR PATTERNS --
+Most frequent BIO tag sequence errors:
+TRUE TRANSITION      PREDICTED AS     PREDICTION       COUNT     
+-----------------------------------------------------------------
+O->O                 predicted as     I-NSCO->I-NSCO   303 occurrences
+I-NSCO->I-NSCO       predicted as     O->O             258 occurrences
+O->O                 predicted as     I-USCO->I-USCO   247 occurrences
+O->O                 predicted as     B-NSCO->I-NSCO   125 occurrences
+I-USCO->I-USCO       predicted as     O->O             120 occurrences
+I-NSCO->I-NSCO       predicted as     I-NSCO->O        115 occurrences
+B-NSCO->O            predicted as     B-NSCO->I-NSCO   75 occurrences
+B-NEG->B-NSCO        predicted as     B-NEG->O         69 occurrences
+
+
+
+
+
 # hmm_second_order_bio.ipynb
 
 Making predictions on test data...
@@ -104,3 +302,396 @@ NEG		0.9583		0.9569		-0.14%
 NSCO		0.6121		0.6694		+9.37%
 UNC		0.6716		0.6889		+2.58%
 USCO		0.2101		0.2555		+21.57%
+
+
+
+-- SUCCESSFUL PREDICTIONS --
+Examples where the second-order model correctly identified negation/uncertainty markers:
+
+Success Example 1:
+Example ID: 26-31
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+ar/VERB              O            O            T       
+eupneica/ADJ         O            O            T       
+murmullo/NOUN        O            O            T       
+vesicular/ADJ        O            O            T       
+conservado/ADJ       O            O            T       
+sin/ADP              B-NEG        B-NEG        T       
+roncus/NOUN          O            B-NSCO       F       
+ni/CCONJ             O            I-NSCO       F       
+sibilantes/ADJ       O            O            T       
+abd/NOUN             O            O            T       
+
+
+Success Example 2:
+Example ID: 26-4
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+2016/NUM             O            B-UNC        F       
+neuropatia/NOUN      O            B-USCO       F       
+sensitiva/ADJ        O            I-USCO       F       
+axonal/ADJ           O            I-USCO       F       
+sin/ADP              B-NEG        B-NEG        T       
+cambios/NOUN         B-NSCO       B-NSCO       T       
+respecto/NOUN        I-NSCO       I-NSCO       T       
+a/ADP                I-NSCO       O            F       
+emg/PROPN            I-NSCO       O            F       
+previo/NOUN          I-NSCO       O            F       
+
+
+Success Example 3:
+Example ID: 17-5
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+neg/PROPN            B-NEG        B-NEG        T       
+rub/PROPN            O            O            T       
+inm/PROPN            O            O            T       
+-cribado/ADJ         O            O            T       
+1er/NUM              O            O            T       
+t/CCONJ              O            O            T       
+cromosomopatias/NOUN O            O            T       
+t21/PRON             O            O            T       
+1/2/NUM              O            O            T       
+t1318/PROPN          O            O            T       
+
+
+Success Example 4:
+Example ID: 3-38
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+imagenes/NOUN        I-NSCO       B-USCO       F       
+de/ADP               I-NSCO       I-USCO       F       
+proceso/NOUN         I-NSCO       I-USCO       F       
+neoformativo/ADJ     I-NSCO       I-USCO       F       
+primario/ADJ         I-NSCO       I-USCO       F       
+dudoso/ADJ           B-UNC        B-UNC        T       
+engrosamiento/NOUN   B-USCO       B-USCO       T       
+mural/ADJ            I-USCO       I-USCO       T       
+de/ADP               I-USCO       I-USCO       T       
+recto/ADJ            I-USCO       O            F       
+
+
+Success Example 5:
+Example ID: 15-25
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+amb/ADP              O            I-UNC        F       
+una/DET              O            B-USCO       F       
+possible/ADJ         O            I-USCO       F       
+colecistitis/ADJ     O            I-USCO       F       
+aguda/ADJ            O            I-USCO       F       
+incipient/ADV        O            O            T       
+amb/ADP              O            O            T       
+colelitiasi/NOUN     O            O            T       
+sense/ADP            B-NEG        B-NEG        T       
+signes/NOUN          B-NSCO       B-NSCO       T       
+
+
+
+-- CHALLENGING CASES --
+Examples where the second-order model struggled with negation/uncertainty markers:
+
+Error Example 1:
+Example ID: 23-0
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+antecedents/NOUN     O            O            T       
+sin/AUX              B-NEG        B-NEG        T       
+amc/NOUN             B-NSCO       B-NSCO       T       
+ni/CCONJ             I-NSCO       I-NSCO       T       
+ap/PROPN             I-NSCO       B-NSCO       F       
+de/ADP               I-NSCO       I-NSCO       T       
+interes/ADJ          I-NSCO       I-NSCO       T       
+proces/NOUN          I-NSCO       O            F       
+actual/ADJ           I-NSCO       O            F       
+acude/VERB           O            O            T       
+
+
+Error Example 2:
+Example ID: 26-7
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+moderada/NOUN        O            B-USCO       F       
+neuropatia/ADJ       O            I-USCO       F       
+sensitiva/ADJ        O            I-USCO       F       
+axonal/ADJ           O            I-USCO       F       
+y/CCONJ              O            O            T       
+de/ADP               O            O            T       
+fibra/NOUN           O            O            T       
+fina/ADJ             O            O            T       
+con/ADP              O            O            T       
+signos/NOUN          O            O            T       
+
+
+Error Example 3:
+Example ID: 16-1
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+toxoplasma/ADV       I-NSCO       O            F       
+negativas/NOUN       B-NEG        O            F       
+rubeola/PROPN        O            O            T       
+inmune/ADJ           O            O            T       
+-/PUNCT              O            O            T       
+triple/NUM           O            O            T       
+screening/NOUN       O            O            T       
+de/ADP               O            O            T       
+bajo/ADJ             O            O            T       
+riesgo/NOUN          O            O            T       
+
+
+Error Example 4:
+Example ID: 19-25
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+vmk/NOUN             O            O            T       
+0.26/NUM             O            O            T       
+hemodinamicamente/.. O            O            T       
+estable/ADJ          O            O            T       
+afebril/NOUN         B-NEG        B-NEG        T       
+refiere/VERB         O            B-NSCO       F       
+presencia/NOUN       O            I-NSCO       F       
+de/ADP               O            I-NSCO       F       
+tos/NOUN             O            I-NSCO       F       
+con/ADP              O            I-NSCO       F       
+
+
+Error Example 5:
+Example ID: 28-13
+----------------------------------------------------------------------
+TOKEN                TRUE         PREDICTED    CORRECT 
+----------------------------------------------------------------------
+transvaginal/ADJ     I-NSCO       O            F       
+por/ADP              O            O            T       
+intenso/ADJ          O            O            T       
+dolor/NOUN           O            O            T       
+por/ADP              O            O            T       
+lo/PRON              O            O            T       
+que/PRON             O            O            T       
+se/PRON              O            O            T       
+decide/VERB          O            O            T       
+realizar/VERB        O            O            T       
+
+
+-- COMMON ERROR PATTERNS --
+Most frequent patterns where model predictions differ from ground truth:
+TRUE TRANSITION      PREDICTED AS     PREDICTION       COUNT     
+-----------------------------------------------------------------
+I-NSCO->I-NSCO       predicted as     O->O             278 occurrences
+O->O                 predicted as     I-NSCO->I-NSCO   271 occurrences
+O->O                 predicted as     I-USCO->I-USCO   201 occurrences
+I-USCO->I-USCO       predicted as     O->O             120 occurrences
+O->O                 predicted as     B-NSCO->I-NSCO   88 occurrences
+I-NSCO->I-NSCO       predicted as     I-NSCO->O        88 occurrences
+I-NSCO->O            predicted as     I-NSCO->I-NSCO   71 occurrences
+B-NSCO->I-NSCO       predicted as     B-NSCO->O        64 occurrences
+
+-- COMPARISON WITH FIRST-ORDER MODEL --
+SUMMARY         COUNT     
+------------------------------
+Improvements    406        tokens
+Regressions     145        tokens
+Net improvement 261        tokens
+
+-- EXAMPLES OF SECOND-ORDER IMPROVEMENTS --
+Sentences where the second-order model corrected errors made by the first-order model:
+
+Improvement Example 1:
+Example ID: 19-5
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+signos/NOUN          O            B-NSCO       O            IMPROVED  
+indirectos/ADJ       O            I-NSCO       O            IMPROVED  
+de/ADP               O            I-NSCO       O            IMPROVED  
+hipertension/NOUN    O            I-NSCO       O            IMPROVED  
+pulmonar/VERB        O            I-NSCO       O            IMPROVED  
+tiempo/NOUN          O            I-NSCO       O            IMPROVED  
+de/ADP               O            I-NSCO       O            IMPROVED  
+aceleracion/PROPN    O            O            O                      
+pulmonar/VERB        O            O            O                      
+acortado/ADJ         O            O            O                      
+Number of tokens improved in this example: 7
+
+
+
+Improvement Example 2:
+Example ID: 44-3
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+de/ADP               O            O            O                      
+diametre/NOUN        O            O            O                      
+anteroposterior/ADJ  O            O            O                      
+no/ADV               B-NEG        B-NEG        B-NEG                  
+se/PRON              B-NSCO       B-NSCO       B-NSCO                 
+identifiquen/VERB    I-NSCO       I-NSCO       I-NSCO                 
+creuament/VERB       I-NSCO       O            I-NSCO       IMPROVED  
+vascular/VERB        I-NSCO       O            I-NSCO       IMPROVED  
+a/ADP                I-NSCO       O            I-NSCO       IMPROVED  
+launio/PROPN         I-NSCO       O            I-NSCO       IMPROVED  
+Number of tokens improved in this example: 4
+
+
+
+Improvement Example 3:
+Example ID: 4-8
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+procedimiento/NOUN   O            O            O                      
+exeresis/NOUN        O            B-UNC        O            IMPROVED  
+de/ADP               O            I-UNC        O            IMPROVED  
+multiples/NOUN       O            B-USCO       O            IMPROVED  
+implantes/NOUN       O            I-USCO       O            IMPROVED  
+peritoneales/ADJ     O            I-USCO       O            IMPROVED  
+linfadenectomia/NOUN O            O            O                      
+pelvica/ADJ          O            O            O                      
+bilateral/ADJ        O            O            O                      
+ausencia/NOUN        B-NEG        B-NEG        B-NEG                  
+Number of tokens improved in this example: 5
+
+
+
+Improvement Example 4:
+Example ID: 47-4
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+de/ADP               O            O            O                      
+hipertrofia/NOUN     O            O            O                      
+de/ADP               O            O            O                      
+lhi/PROPN            O            B-UNC        O            IMPROVED  
+con/ADP              O            I-UNC        O            IMPROVED  
+bordes/NOUN          O            B-USCO       O            IMPROVED  
+nodulares/ADJ        O            I-USCO       O            IMPROVED  
+y/CCONJ              O            I-USCO       O            IMPROVED  
+parenquima/PROPN     O            I-USCO       O            IMPROVED  
+heterogeneo/PROPN    O            I-USCO       O            IMPROVED  
+Number of tokens improved in this example: 7
+
+
+
+Improvement Example 5:
+Example ID: 62-1
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+apiretica/ADJ        O            O            O                      
+normotensa/ADJ       O            O            O                      
+no/ADV               B-NEG        B-NEG        B-NEG                  
+taquicardica/ADJ     B-NSCO       B-NSCO       B-NSCO                 
+y/CCONJ              O            I-NSCO       O            IMPROVED  
+con/ADP              O            O            O                      
+buen/ADJ             O            O            O                      
+estado/NOUN          O            O            O                      
+general/ADJ          O            O            O                      
+utero/ADJ            O            O            O                      
+Number of tokens improved in this example: 1
+
+
+
+-- EXAMPLES OF SECOND-ORDER REGRESSIONS --
+Sentences where the second-order model made errors not present in the first-order model:
+
+Regression Example 1:
+Example ID: 19-6
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+asocia/NOUN          O            O            O                      
+muy/ADV              O            O            O                      
+leve/ADJ             O            O            O                      
+ortopnea/ADJ         O            O            B-NSCO       REGRESSED 
+sin/ADP              B-NEG        B-NEG        B-NEG                  
+dpn/PROPN            B-NSCO       B-NSCO       B-NSCO                 
+o/CCONJ              I-NSCO       I-NSCO       I-NSCO                 
+dolor/NOUN           I-NSCO       I-NSCO       I-NSCO                 
+toracico/ADJ         I-NSCO       I-NSCO       I-NSCO                 
+refiere/VERB         O            O            O                      
+Number of tokens regressed in this example: 1
+
+
+
+Regression Example 2:
+Example ID: 22-1
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+actualmente/ADV      O            O            I-NSCO       REGRESSED 
+situacion/PROPN      O            O            O                      
+de/ADP               O            O            O                      
+claudicacion/NOUN    O            O            O                      
+familiar/ADJ         O            O            O                      
+medicacio/NOUN       O            O            O                      
+habitual/ADJ         O            O            O                      
+adiro/NOUN           O            O            O                      
+100/NUM              O            O            O                      
+mg/NUM               O            O            O                      
+Number of tokens regressed in this example: 1
+
+
+
+Regression Example 3:
+Example ID: 53-9
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+4/NUM                O            O            O                      
+flora/NOUN           O            O            O                      
+orofaringea/PROPN    O            O            O                      
+-cultivo/ADJ         B-NSCO       O            O                      
+esputo/ADJ           I-NSCO       O            O                      
+ps/INTJ              I-NSCO       O            O                      
+aeruginosa/ADJ       I-NSCO       O            O                      
+negativo/ADJ         B-NEG        O            B-NEG        IMPROVED  
+exploraciones/NOUN   O            O            B-NSCO       REGRESSED 
+complementarias/ADJ  O            O            O                      
+Number of tokens regressed in this example: 1
+
+
+
+Regression Example 4:
+Example ID: 61-4
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+ii-iii/PROPN         O            O            B-NEG        REGRESSED 
+colecistectomia/NOUN O            B-NSCO       B-NSCO                 
+via/PROPN            O            I-NSCO       I-NSCO                 
+biliar/PROPN         O            I-NSCO       I-NSCO                 
+intra/ADJ            O            I-NSCO       I-NSCO                 
+y/CCONJ              O            I-NSCO       I-NSCO                 
+extrahepatica/ADJ    O            I-NSCO       I-NSCO                 
+no/ADV               B-NEG        B-NEG        B-NEG                  
+dilatadas/ADJ        B-NSCO       B-NSCO       B-NSCO                 
+sin/ADP              B-NEG        B-NEG        B-NEG                  
+Number of tokens regressed in this example: 1
+
+
+
+Regression Example 5:
+Example ID: 3-0
+----------------------------------------------------------------------
+TOKEN                TRUE         FIRST-ORDER  SECOND-ORDER STATUS    
+----------------------------------------------------------------------
+disnea/ADJ           O            O            O                      
+y/CCONJ              O            O            O                      
+molestias/PROPN      O            O            O                      
+toracicas/PROPN      O            O            O                      
+antecedents/NOUN     O            O            O                      
+antecedentes/NOUN    O            O            O                      
+personales/ADJ       O            O            O                      
+-no/PUNCT            B-NEG        B-NEG        O            REGRESSED 
+refeiere/VERB        B-NSCO       I-NEG        B-NEG                  
+alergias/NOUN        I-NSCO       B-NSCO       B-NSCO                 
+Number of tokens regressed in this example: 1

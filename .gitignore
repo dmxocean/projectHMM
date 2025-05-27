@@ -1,40 +1,7 @@
-# Ignore specific folders
-sandbox/
-.private/
-.secrets/
-.idea/
+data/
+data/results
+__pycache__
 
-# Ignore specific files
-*.DS_Store
-*.swp
-*.lock
-commit.txt
-requirements.txt
-
-# Folders
-data/processed/*.pkl
-data/processed/*.csv
-
-# Python-specific ignores
-__pycache__/
-.pytest_cache/
-*.py[cod]
-*$py.class
-*.egg-info/
-dist/
-build/
-*.egg
-.Python
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-coverage.xml
-*.cover
-*.pyo
-*.pyd
+.gitignore
+.DS_Store
+*.md
